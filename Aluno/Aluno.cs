@@ -27,8 +27,8 @@ namespace Aluno
             int i = bi - 1;
             if ((i < 0) || (i > 3)){
                 // Condição de Erro;
-                throw new ArgumentOutOfRangeException($"{}")
-            }
+                throw new ArgumentOutOfRangeException($"{nameof(value)} must 1 and 4 ");
+            } else if (nota < 0 )
         }
 
     }
