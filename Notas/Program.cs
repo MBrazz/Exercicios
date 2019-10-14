@@ -24,7 +24,7 @@ namespace Notas
 
             Console.WriteLine("Sua média é " + media);
 
-            if(media>= 7.0){
+            if(media>= 5.0){
             Console.WriteLine("Aprovado");
             }
             else {

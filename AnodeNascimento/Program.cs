@@ -21,21 +21,26 @@ namespace AnodeNascimento
             idade = 2019 - ano;
 
             if(idade < 3){
-            Console.WriteLine("Recém-Nascido");
+                System.Console.WriteLine($"Você tem {idade} anos");
+                Console.WriteLine("Recém-Nascido");
             }
             else if ((idade>=3) && (idade<=11)){
-            Console.WriteLine("Criança");
+                System.Console.WriteLine($"Você tem {idade} anos");
+                Console.WriteLine("Criança");
             }
 
-            else if ((idade>12) && (idade <= 19)){
+            else if ((idade>=12) && (idade <= 19)){
+                System.Console.WriteLine($"Você tem {idade} anos");
                 Console.WriteLine("Adolecente");
             }
 
-            else if ((idade>20) && (idade <= 65)){
+            else if ((idade>=20) && (idade <= 65)){
+                System.Console.WriteLine($"Você tem {idade} anos");
                 Console.WriteLine("Adulto");
             }
            
            else if (idade > 65 ){
+               System.Console.WriteLine($"Você tem {idade} anos");
                Console.WriteLine("Idoso");
            }
         }

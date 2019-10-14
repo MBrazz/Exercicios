@@ -6,7 +6,16 @@ namespace Hello
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-        }
+            string yourName;
+            Console.WriteLine("What is your name?");
+            yourName = Console.ReadLine();
+ 
+            Console.WriteLine("Hello {0}!!!", yourName);
+
+            
+            System.Console.WriteLine("What is your years old?");
+            int age = int.Parse(Console.ReadLine());
+            Console.WriteLine("You are {0} years old", age);
+        } 
     }
 }
