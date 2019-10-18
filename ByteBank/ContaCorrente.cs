@@ -1,54 +1,39 @@
-namespace ByteBank {
-    public class ContaCorrente {
-        public string Titular { get; set; }
-        public int Agencia { get; set; }
-        public int Numero { get; set; }
-        private double _Saldo;
 
-        private double Saldo {
-            get { return _Saldo; }
-        }
+namespace ByteBank
+{
+    public class ContaCorrente
+    {
+        public Cliente Titular {get;set;}
+        public int Agencia {get;set;}
+        public int Numero {get;set;}
+        public double Saldo {get;set;}
 
-
-        public ContaCorrente (int Agencia, int Numero, string Titular) {
+        public ContaCorrente(int Agencia,int Numero,Cliente Titular){
             this.Agencia = Agencia;
             this.Numero = Numero;
             this.Titular = Titular;
-            this._Saldo = 0.0;
+            this.Saldo = 0.0;
         }
 
-        public bool Deposito (double valor){
-            if (valor >= 0)
-            {
-                this._Saldo += valor;
-            return true;
-            } else
-            {
-               return false;
-            }
+        public double Deposito(double valor){
+            this.Saldo += valor;
+            return this.Saldo;
         }
-
-        public bool Saque (double valor) {
-            if(valor >= 0){
-            if (this._Saldo >= valor) {
-                this._Saldo -= valor;
+        public bool Saque(double valor){
+            if(valor <= this.Saldo){
+                this.Saldo -= valor;
                 return true;
-            } else {
+            } else{
                 return false;
             }
-            }
-         return false;
         }
-           
-        
-        public bool transferencia (ContaCorrente contaDestino, double valor) {
-            if (this.Saque (valor)) {
-                contaDestino.Deposito (valor);
+        public bool Transferencia(ContaCorrente destino, double valor){
+            if (this.Saque(valor)){
+                destino.Deposito(valor);
                 return true;
             } else {
                 return false;
             }
         }
-
     }
 }
