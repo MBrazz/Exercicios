@@ -12,11 +12,11 @@ namespace ByteBank2.Models
         {
             Limite = 0.0;
         }
-        public bool SetLimite(double valor)
+        public bool SetLimite(double Valor)
         {
-            if(valor >= 0)
+            if(Valor >= 0)
             {
-                Limite = valor;
+                Limite = Valor;
                 return true;
             }
             return false;
