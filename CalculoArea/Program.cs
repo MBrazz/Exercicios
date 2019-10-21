@@ -4,7 +4,6 @@ namespace CalculoArea
 {
     class Program
     {
-        private const string V = "4";
 
         static void Main(string[] args)
         {
