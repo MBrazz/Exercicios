@@ -1,14 +1,12 @@
-using System;
 using Reciclagem.Interfaces;
 
 namespace Reciclagem.Models
 {
-    public class Papelao : Objeto, IAzul
+    public class Papelao : Lixo, IPapel
     {
-        public bool ReciclarPapel()
+        public string ReciclarFeitoPapel()
         {
-            System.Console.WriteLine("Reclicando o material feito de PAPEL!");
-            return true;
+            return this.GetType().Name;
         }
     }
 }

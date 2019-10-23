@@ -1,14 +1,13 @@
-using System;
 using Reciclagem.Interfaces;
+
 
 namespace Reciclagem.Models
 {
-    public class Latinha : Objeto, IAmarelo
+    public class Latinha : Lixo, IMetal
     {
-        public bool ReciclarMetal()
+        public string ReciclarFeitoMetal()
         {
-            System.Console.WriteLine("Reciclando o material feito de METAL!");
-            return true;
+            return this.GetType().Name;
         }
     }
 }

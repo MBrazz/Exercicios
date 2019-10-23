@@ -1,14 +1,12 @@
-using System;
 using Reciclagem.Interfaces;
 
 namespace Reciclagem.Models
 {
-    public class GarrafaPET : Objeto, IVermelho
+    public class GarrafaPET : Lixo, IPlastico
     {
-        public bool ReciclarPlastico()
+        public string ReciclarFeitoPlastico()
         {
-            System.Console.WriteLine("Recliclando o material feito de PLASTICO!");
-            return true;
+            return this.GetType().Name;
         }
     }
 }
