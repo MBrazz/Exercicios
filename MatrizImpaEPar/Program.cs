@@ -10,7 +10,7 @@ namespace MatrizImpaEPar
         int par = 0;
         int impar = 0;
         for(int cont = 0; cont < 6; cont++){
-            Console.Write($"Digite o {cont+1} número: ");
+            Console.Write($"Digite o {cont+1}º número: ");
             vetor[cont] = int.Parse(Console.ReadLine());
         }
 

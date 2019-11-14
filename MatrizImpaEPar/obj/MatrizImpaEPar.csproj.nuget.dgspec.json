@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mateu\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj": {}
+    "C:\\Users\\51663853819\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mateu\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj": {
+    "C:\\Users\\51663853819\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateu\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj",
+        "projectUniqueName": "C:\\Users\\51663853819\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj",
         "projectName": "MatrizImpaEPar",
-        "projectPath": "C:\\Users\\mateu\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj",
-        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateu\\Documents\\Exercicios C#\\MatrizImpaEPar\\obj\\",
+        "projectPath": "C:\\Users\\51663853819\\Documents\\Exercicios C#\\MatrizImpaEPar\\MatrizImpaEPar.csproj",
+        "packagesPath": "C:\\Users\\51663853819\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\51663853819\\Documents\\Exercicios C#\\MatrizImpaEPar\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\51663853819\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
