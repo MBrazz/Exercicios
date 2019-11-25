@@ -1,4 +1,0 @@
-cliente_nome=Teste;cliente_endereco=rua jose;cliente_telefone=4677-8977;cliente_email=teste@email.com;hamburguer_nome=Furioso;hamburguer_preco=9,99;shake_nome=Biscoito;shake_preco=9,99;data_pedido=22/11/2019 15:05:54;preco_total=19,98
-cliente_nome=Teste;cliente_endereco=rua jose;cliente_telefone=4677-8977;cliente_email=teste@email.com;hamburguer_nome=Furioso;hamburguer_preco=9,99;shake_nome=Biscoito;shake_preco=9,99;data_pedido=22/11/2019 15:06:43;preco_total=19,98
-cliente_nome=aaaaa;cliente_endereco=rua jose;cliente_telefone=4677-8977;cliente_email=aaaa@222.com;hamburguer_nome=Vegeburguer;hamburguer_preco=10,99;shake_nome=Biscoito;shake_preco=9,99;data_pedido=22/11/2019 15:07:51;preco_total=20,98
-cliente_nome=aaaaa;cliente_endereco=rua jose;cliente_telefone=4677-8977;cliente_email=aaaa@222.com;hamburguer_nome=Combo da Hora;hamburguer_preco=19,99;shake_nome=Morango;shake_preco=19,99;data_pedido=22/11/2019 17:03:18;preco_total=39,98
