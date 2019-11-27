@@ -34,3 +34,4 @@ C:\Users\51663853819\Documents\Exercicios C#\RoleTopMVC\obj\Debug\netcoreapp2.2\
 C:\Users\51663853819\Documents\Exercicios C#\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.dll
 C:\Users\51663853819\Documents\Exercicios C#\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.pdb
 C:\Users\51663853819\Documents\Exercicios C#\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csproj.CopyComplete
+C:\Users\51663853819\Documents\Exercicios C#\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Erro.g.cshtml.cs

@@ -66,10 +66,18 @@ namespace McBonaldsMVC.Controllers
 
             if(pedidoRepository.Inserir(pedido))
             {
-                return View("Sucesso");
+                return View ("Sucesso", new RespostaViewModel()
+                {
+                    NomeView = "Pedido",
+                    Mensagem = $"{cliente.Nome} seu pedido foi concluído!"
+                });
                 
             } else {
-                return View("Erro");
+                return View ("Erro", new RespostaViewModel()
+                {
+                    NomeView = "Pedido",
+                    Mensagem = $"{cliente.Nome} seu pedido não foi concluído!"
+                });
             }
 
 
