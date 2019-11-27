@@ -67,7 +67,10 @@ namespace McBonaldsMVC.Controllers
 
             return  View(new HistoricoViewModel()
             {
-                Pedidos = pedidosCliente
+                Pedidos = pedidosCliente,
+                NomeView = "Historico",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
             });
         }
     }
