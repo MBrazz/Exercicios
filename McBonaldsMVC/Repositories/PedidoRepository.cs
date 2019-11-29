@@ -14,6 +14,8 @@ namespace McBonaldsMVC.Repositories {
             }
         }
         public bool Inserir (Pedido pedido) {
+            var quantidadePedidos = File.ReadAllLines(PATH).Length;
+            pedido.Id = (ulong) ++quantidadePedidos;
             var linha = new string[] { PrepararPedidoCSV (pedido) };
             File.AppendAllLines (PATH, linha);
 
@@ -43,6 +45,8 @@ namespace McBonaldsMVC.Repositories {
             {
                 Pedido pedido = new Pedido();
                 
+                pedido.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
+                pedido.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
                 pedido.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 pedido.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco", linha);
                 pedido.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
@@ -59,13 +63,53 @@ namespace McBonaldsMVC.Repositories {
             return pedidos;
         }
 
+        public Pedido ObterPor(ulong id)
+        {
+            var pedidosTotais = ObterTodos();
+            foreach (var pedido in pedidosTotais)
+            {
+                if(id.Equals(pedido.Id))
+                {
+                    return pedido;
+                }
+            }
+            return null;
+        }
+
+        public bool Atualizar(Pedido pedido)
+        {
+            var pedidosTotais = File.ReadAllLines(PATH);
+            var pedidoCSV =  PrepararPedidoCSV(pedido);
+            var linhaPedido = -1;
+            var resultado = false;
+
+            for (int i = 0; i < pedidosTotais.Length; i++)
+            {
+                var idConvertido =  ulong.Parse(ExtrairValorDoCampo("id", pedidosTotais[i]));
+                if(pedido.Id.Equals(idConvertido))
+                {
+                    linhaPedido = i;
+                    resultado = true;
+                    break;
+                }
+            }
+
+            if(resultado)
+            {
+                pedidosTotais[linhaPedido] = pedidoCSV;
+                File.WriteAllLines(PATH, pedidosTotais);
+            }
+
+            return resultado;
+        }
+
 
         private string PrepararPedidoCSV (Pedido pedido) {
 
             Cliente c = pedido.Cliente;
             Hamburguer h = pedido.Hamburguer;
             Shake s = pedido.Shake;
-            return $"cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};hamburguer_nome={h.Nome};hamburguer_preco={h.Preco};shake_nome={s.Nome};shake_preco={s.Preco};data_pedido={pedido.DataDoPedido};preco_total={pedido.PrecoTotal}";
+            return $"id={pedido.Id};status_pedido={pedido.Status};cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};hamburguer_nome={h.Nome};hamburguer_preco={h.Preco};shake_nome={s.Nome};shake_preco={s.Preco};data_pedido={pedido.DataDoPedido};preco_total={pedido.PrecoTotal}";
         }
     }
 }

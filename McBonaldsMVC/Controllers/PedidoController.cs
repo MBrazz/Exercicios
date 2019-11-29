@@ -1,3 +1,4 @@
+using McBonaldsMVC.Enums;
 using McBonaldsMVC.Models;
 using McBonaldsMVC.Repositories;
 using McBonaldsMVC.ViewModels;
@@ -39,8 +40,7 @@ namespace McBonaldsMVC.Controllers
 
         }
 
-        public IActionResult Registrar(IFormCollection form)
-        {
+        public IActionResult Registrar(IFormCollection form){
             ViewData["Action"]= "Pedido";
             Pedido pedido = new Pedido();
 
@@ -82,5 +82,48 @@ namespace McBonaldsMVC.Controllers
 
 
         }
+    
+        public IActionResult Aprovar(ulong id)
+        {
+            var pedido = pedidoRepository.ObterPor(id);
+            pedido.Status = (uint) StatusPedido.APROVADO;
+
+            if(pedidoRepository.Atualizar(pedido))
+            {
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else {
+                return View("Erro", new RespostaViewModel("Não foi possível aprovar este pedido")
+                {
+                    NomeView = "Dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()                   
+                 });
+                
+            }
+
+        }
+
+        public IActionResult Reprovar(ulong id)
+        {
+            var pedido = pedidoRepository.ObterPor(id);
+            pedido.Status = (uint) StatusPedido.REPROVADO;
+
+            if(pedidoRepository.Atualizar(pedido))
+            {
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else {
+                return View("Erro", new RespostaViewModel("Não foi possível reprovar este pedido")
+                {
+                    NomeView = "Dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()                   
+                 });
+                
+            }
+
+        }
+    
     }
 }
