@@ -53,14 +53,14 @@ namespace RoleTopMVC.Controllers
                 return View ("Sucesso", new RespostaViewModel()
                 {
                     NomeView = "Reserva",
-                    Mensagem = $"{cliente.Nome} seu reserva foi concluída!"
+                    Mensagem = $"{cliente.Nome} sua reserva foi concluída!"
                 });
                 
             } else {
                 return View ("Erro", new RespostaViewModel()
                 {
                     NomeView = "Reserva",
-                    Mensagem = $"{cliente.Nome} seu reserva não foi concluída!"
+                    Mensagem = $"{cliente.Nome} sua reserva não foi concluída!"
                 });
             }
 
@@ -98,7 +98,7 @@ namespace RoleTopMVC.Controllers
                 return RedirectToAction("Dashboard", "Administrador");
             }
             else {
-                return View("Erro", new RespostaViewModel("Não foi possível reprovar este reserva")
+                return View("Erro", new RespostaViewModel("Não foi possível reprovar esta reserva")
                 {
                     NomeView = "Dashboard",
                     UsuarioEmail = ObterUsuarioSession(),
