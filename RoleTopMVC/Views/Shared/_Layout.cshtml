@@ -40,6 +40,7 @@
         <link rel="stylesheet" type="text/css" href="~/css/default.css"/>
         <link rel="stylesheet" type="text/css" href="~/css/dashboard.css"/>
     }
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
 </head>
 <body>
     <h1>Rolê Top</h1>
@@ -48,20 +49,28 @@
             
             <div class="section-container">
                 <ul>
-                    <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
-                    <li><a href='@Url.Action("Index", "Home")#eventos'>Eventos</a></li>
-                    <li><a href='@Url.Action("Index", "Home")#galeria'>Galeria</a></li>
-                    <li><a asp-controller="Reserva" asp-action="Index">Reservar</a></li>
+
+                     <li id="bt-mobile-menu">
+                        <!-- HTML para colocar os ícones do FA -->
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active">Home</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#eventos'>Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#galeria'>Galeria</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Reserva" asp-action="Index">Reservar</a></li>
                     <p>|</p>
                     <div class="login">   
                     @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
                     {
-                    <li><a asp-controller="Cliente" asp-action="Login">Login/Cadastro</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login/Cadastro</a></li>
                     }
                      else
                     {
-                    <li><a asp-controller="Cliente" asp-action="Logoff">Logoff</a></li>
-                    <li><a asp-controller="Cliente" asp-action="Historico">Reservas</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Logoff</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Historico">Reservas</a></li>
                     }             
                     </div> 
                  </ul>
@@ -71,6 +80,7 @@
         </nav>
     </header>
          @RenderBody()
+        
         <footer>
         <div class="section-container">
             <address>
@@ -83,7 +93,36 @@
             <a href="#">Voltar para o topo!</a>
         </div>
     </footer>
-    
-    
+
+    <script>
+        function toggleMobileMenu() {
+            var ul = document.querySelector("nav ul");
+            var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+            var icon = document.querySelector(".icon > i");
+
+            ul.classList.toggle("mobile-mode");
+
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+
+                icon.classList.add("fas");
+                icon.classList.add("fa-skull");
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-skull");
+
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+            }
+
+            for (var button of commonButtons) {
+                button.classList.toggle("active");
+            }
+
+        }
+        
+    </script>
+        
     </body>
     </html>

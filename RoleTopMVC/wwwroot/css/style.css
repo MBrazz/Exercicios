@@ -3,8 +3,6 @@
     padding: 0; 
 }
 
-
-
 h1 {
     display: none;
 }
@@ -55,8 +53,9 @@ nav {
     
 }
 
-
-
+nav #bt-mobile-menu {
+    display: none;
+}
 
 nav ul {
     display:flex;
@@ -65,8 +64,6 @@ nav ul {
     height: 2em;
     align-items: center;
     justify-content:space-between;
-    
- 
     
 }
 
@@ -100,12 +97,10 @@ nav a:hover {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 80px 12em;
+    padding: 80px;
     margin-bottom: 0px;
+    width: 100%;
 }
-
-
-
 
 
 div > p {
@@ -118,10 +113,8 @@ color: aliceblue;
 }
 
 div > p {
-    background: #7000a3;
-    margin: 0;
+    margin: 0px;
     padding: 0px;
-
 }
 
 .section-container > a {
@@ -129,8 +122,8 @@ div > p {
     padding: 15px 0;
     text-decoration: none;
     font-weight: bold;
-    color: #FFC600;
-    height: 30px;
+    color: #7000a3;
+    height: 20px;
     
 }
 
@@ -142,16 +135,13 @@ div > p {
 
 
 footer {
-    background-color: #7000a3;
+    display: flex;
+    background-color: #FFC600;
+    color:#7000a3;
     font-weight: bold;
     text-align: center;
-    color: #FFC600;
     
 }
-
-
-
-
 
 address {
     padding: 15px 0;
@@ -274,16 +264,42 @@ hr{
     box-shadow: 6px 6px 15px 4px rgb(54, 54, 54);
 }
 
+@media (max-width: 1200px) {
 .text p {
     padding: 10px 0 ;
     text-align: center;
     padding-top: 25px;
+
+}
 }
 
 .login {
     display: flex;
     flex-direction: row;
 }
+
+@media (max-width: 625px) {
+    nav #bt-mobile-menu {
+        display: block;
+    }
+
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
 
 
 

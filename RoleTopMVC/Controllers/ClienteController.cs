@@ -10,7 +10,7 @@ namespace RoleTopMVC.Controllers {
         public class ClienteController : AbstractController
     {
         private ClienteRepository clienteRepository = new ClienteRepository();
-        private ReservaRepository pedidoRepository = new ReservaRepository();
+        private ReservaRepository reservaRepository = new ReservaRepository();
         [HttpGet]
         public IActionResult Login()
         {
@@ -76,7 +76,7 @@ namespace RoleTopMVC.Controllers {
         public IActionResult Historico()
         {
             var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
-            var reservasCliente = pedidoRepository.ObterTodosPorCliente(emailCliente);
+            var reservasCliente = reservaRepository.ObterTodosPorCliente(emailCliente);
 
             return  View(new HistoricoViewModel()
             {
