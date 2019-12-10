@@ -24,7 +24,7 @@ namespace RoleTopMVC.Controllers
             Cliente cliente = new Cliente();
             ViewData["Action"] = "Cadastro";
             try {
-                cliente = new Cliente (form["nome"], form["senha"], form["email"], DateTime.Parse (form["data-nascimento"]));
+                cliente = new Cliente (form["nome"], form["email"], form["senha"], form["confirmarsenha"]);
 
                 cliente.TipoUsuario = (uint) TiposUsuario.CLIENTE;
 

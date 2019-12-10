@@ -30,12 +30,14 @@ body {
 
 }
 
+
 #logo {
-    height: 20%;
-    width: 20%;
-    margin: 10px;
+    width: 15%;
+    margin-top: 100px;
+    margin-left: 50px;
     
 }
+
 
 .logo-backgorund {
     background-color:#7000a3;
@@ -97,9 +99,9 @@ nav a:hover {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 80px;
-    margin-bottom: 0px;
+    padding-bottom: 40px;
     width: 100%;
+
 }
 
 
@@ -123,7 +125,7 @@ div > p {
     text-decoration: none;
     font-weight: bold;
     color: #7000a3;
-    height: 20px;
+    height: 10px;
     
 }
 
@@ -155,18 +157,22 @@ address {
 }
 
 
+
+
+
 .fotodoseventos {
 display: flex;
-justify-content: space-around;
+justify-content: space-evenly;
 background-color: #7000a3;
 padding-bottom: 35px;
-padding: 0 200px; 
 
 }
+
 
 .fotodoseventos img {
     box-shadow: 6px 6px 15px 4px rgb(54, 54, 54);
 }
+
 
 
 .dance-container  p {

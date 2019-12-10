@@ -17,7 +17,7 @@ namespace RoleTopMVC.Repositories
         public bool Inserir (Reserva reserva) {
             var quantidadeReservas = File.ReadAllLines(PATH).Length;
             reserva.Id = (ulong) ++quantidadeReservas;
-            var linha = new string[] { PrepararPedidoCSV (reserva) };
+            var linha = new string[] { PrepararReservaCSV (reserva) };
             File.AppendAllLines (PATH, linha);
 
             return true;
@@ -47,11 +47,11 @@ namespace RoleTopMVC.Repositories
                 Reserva reserva = new Reserva();
                 
                 reserva.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
-                reserva.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
+                reserva.Status = uint.Parse(ExtrairValorDoCampo("status_reserva", linha));
                 reserva.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 reserva.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 reserva.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total", linha));
-                reserva.DataDaReserva = DateTime.Parse(ExtrairValorDoCampo("data_pedido", linha));
+                reserva.DataDaReserva = DateTime.Parse(ExtrairValorDoCampo("data_reserva", linha));
 
                 reservas.Add(reserva);
             }
@@ -74,8 +74,8 @@ namespace RoleTopMVC.Repositories
         public bool Atualizar(Reserva reserva)
         {
             var reservasTotais = File.ReadAllLines(PATH);
-            var pedidoCSV =  PrepararPedidoCSV(reserva);
-            var linhaPedido = -1;
+            var reservaCSV =  PrepararReservaCSV(reserva);
+            var linhaReserva = -1;
             var resultado = false;
 
             for (int i = 0; i < reservasTotais.Length; i++)
@@ -83,7 +83,7 @@ namespace RoleTopMVC.Repositories
                 var idConvertido =  ulong.Parse(ExtrairValorDoCampo("id", reservasTotais[i]));
                 if(reserva.Id.Equals(idConvertido))
                 {
-                    linhaPedido = i;
+                    linhaReserva = i;
                     resultado = true;
                     break;
                 }
@@ -91,7 +91,7 @@ namespace RoleTopMVC.Repositories
 
             if(resultado)
             {
-                reservasTotais[linhaPedido] = pedidoCSV;
+                reservasTotais[linhaReserva] = reservaCSV;
                 File.WriteAllLines(PATH, reservasTotais);
             }
 
@@ -99,10 +99,11 @@ namespace RoleTopMVC.Repositories
         }
 
 
-        private string PrepararPedidoCSV (Reserva reserva) {
+        private string PrepararReservaCSV (Reserva reserva) {
 
             Cliente c = reserva.Cliente;
-            return $"id={reserva.Id};status_reserva={reserva.Status};cliente_nome={c.Nome};cliente_email={c.Email};data_pedido={reserva.DataDaReserva};preco_total={reserva.PrecoTotal}";
+            Evento e = reserva.Evento;
+            return $"id={reserva.Id};status_reserva={reserva.Status};cliente_nome={c.Nome};cliente_email={c.Email};evento_nome={e.Nome};evento_preco={e.Preco};data_reserva={reserva.DataDaReserva};preco_total={reserva.PrecoTotal}";
         }
     }
 }

@@ -11,32 +11,30 @@
                     <div>
                             <label for="Nome">Nome Completo</label>
                             <br />
-                            <input id="nome" type="name" />
+                            <input id="nome" type="name" name="nome" />
                         </div>
                 
                 <div>
                     <label for="email">E-mail</label>
                     <br />
-                    <input id="email" type="email" placeholder="Ex.: roletop@email.com" />
+                    <input id="email" type="email" name="email" placeholder="Ex.: roletop@email.com" />
                 </div>
     
                 <div>
                     <label for="cpf">CPF</label>
                     <br />
-                    <input id="cpf" type="text" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00">
+                    <input id="cpf" type="text" name="cpf" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00">
                 </div>
                         <div>
                             <label for="eventos">Tipo de Evento</label>
-                            <select id="eventos" >
+                            <select id="eventos" name="evento" >
                                 <option value="" disabled selected>Selecione</option>
-                                <option value="furioso">Formatura</option>
-                                <option value="combo">Aniversário</option>
-                                <option value="combo">Casamento</option>
-                                <option value="combo">Palestra</option>
-                                <option value="combo">Campus party</option>
-                                <option value="combo">Exposição</option>
-                                <option value="combo">Coquitél</option>
-                                <option value="combo">Debutante</option>
+                                @foreach (var evento in Model.Eventos)
+                                {
+                                    <option value="@evento.Nome">@evento.Nome por @evento.Preco
+                                        
+                                    </option>
+                                }
                             </select>
 
                                 

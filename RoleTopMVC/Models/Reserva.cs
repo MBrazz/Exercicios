@@ -8,7 +8,7 @@ namespace RoleTopMVC.Models
 
         public ulong Id {get;set;}
         public Cliente Cliente {get;set;}
-
+        public Evento Evento {get;set;}
         public DateTime DataDaReserva {get;set;}
 
         public double PrecoTotal {get;set;}
@@ -18,6 +18,7 @@ namespace RoleTopMVC.Models
         public Reserva()
         {
             this.Cliente = new Cliente();
+            this.Evento = new Evento();
             this.Id = 0;
             this.Status = (uint) StatusReserva.PENDENTE;
         }

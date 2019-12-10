@@ -11,23 +11,19 @@
     <table>
         <thead>
             <tr>
-                <th>Data
-
-                </th>
-                <th>Preço
-                    
-                </th>
+                <th>Data</th>
+                <th>Evento</th>
+                <th>Preço</th>
             </tr>
         </thead>
         <tbody>
             @foreach( var reserva in Model.Reservas ) {
                 <tr>
-                    <td>@reserva.DataDaReserva
-
-                    </td>
-                    <td>@reserva.PrecoTotal
+                    <td>@reserva.DataDaReserva</td>
+                    <td>@reserva.Evento.Nome</td>
+                    <td>@reserva.Evento.Preco</td>
                         
-                    </td>
+                    
                 </tr>
             }
         </tbody>

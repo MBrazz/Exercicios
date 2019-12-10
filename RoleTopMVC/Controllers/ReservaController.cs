@@ -12,33 +12,39 @@ namespace RoleTopMVC.Controllers
     {
         ClienteRepository clienteRepository = new ClienteRepository();
         ReservaRepository reservaRepository = new ReservaRepository();
+        EventoRepository eventoRepository = new EventoRepository();
         public IActionResult Index()
         {
-            ReservaViewModel pvm = new ReservaViewModel();
+            ReservaViewModel rvm = new ReservaViewModel();
+            rvm.Eventos = eventoRepository.ObterTodos();
 
             var emailCliente = ObterUsuarioSession();
             if(!string.IsNullOrEmpty(emailCliente))
             {
-                pvm.Cliente = clienteRepository.ObterPor(emailCliente);
+                rvm.Cliente = clienteRepository.ObterPor(emailCliente);
             }
 
             var nomeUsuario = ObterUsuarioNomeSession();
             if(!string.IsNullOrEmpty(nomeUsuario))
             {
-                pvm.NomeCliente = nomeUsuario;
+                rvm.NomeCliente = nomeUsuario;
             }
 
-                pvm.NomeView = "Reserva";
-                pvm.UsuarioEmail = emailCliente;
-                pvm.UsuarioNome = nomeUsuario;
+                rvm.NomeView = "Reserva";
+                rvm.UsuarioEmail = emailCliente;
+                rvm.UsuarioNome = nomeUsuario;
 
-                return View(pvm);
+                return View(rvm);
 
         }
 
         public IActionResult Registrar(IFormCollection form){
             ViewData["Action"]= "Reserva";
             Reserva reserva = new Reserva();
+
+            var nomeEvento = form["evento"];
+            Evento evento = new Evento (nomeEvento, eventoRepository.ObterPrecoDe(nomeEvento));
+            reserva.Evento = evento;
 
 
             Cliente cliente = new Cliente();
