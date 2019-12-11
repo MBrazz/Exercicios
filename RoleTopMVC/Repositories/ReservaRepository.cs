@@ -50,7 +50,8 @@ namespace RoleTopMVC.Repositories
                 reserva.Status = uint.Parse(ExtrairValorDoCampo("status_reserva", linha));
                 reserva.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 reserva.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
-                reserva.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total", linha));
+                reserva.Evento.Nome = ExtrairValorDoCampo("evento_nome", linha);
+                reserva.Evento.Preco = double.Parse(ExtrairValorDoCampo("evento_preco", linha));
                 reserva.DataDaReserva = DateTime.Parse(ExtrairValorDoCampo("data_reserva", linha));
 
                 reservas.Add(reserva);
@@ -103,7 +104,7 @@ namespace RoleTopMVC.Repositories
 
             Cliente c = reserva.Cliente;
             Evento e = reserva.Evento;
-            return $"id={reserva.Id};status_reserva={reserva.Status};cliente_nome={c.Nome};cliente_email={c.Email};evento_nome={e.Nome};evento_preco={e.Preco};data_reserva={reserva.DataDaReserva};preco_total={reserva.PrecoTotal}";
+            return $"id={reserva.Id};status_reserva={reserva.Status};cliente_nome={c.Nome};cliente_email={c.Email};evento_nome={e.Nome};evento_preco={e.Preco};data_reserva={reserva.DataDaReserva}";
         }
     }
 }
