@@ -69,7 +69,7 @@ namespace CalculoArea
                 break;
 
                 case "6":
-                double pi = 3;
+                double pi = 3.1416;
                 System.Console.WriteLine("Área do Círculo");
                 System.Console.WriteLine("Qual o Tamanho do Raio?");
                 double raioCir = double.Parse(Console.ReadLine());
@@ -78,6 +78,10 @@ namespace CalculoArea
                 break;
 
 
+                double pi = 3.1416;
+                double raio = double.Parse(Console.ReadLine());
+                double A = (raio * raio) * pi;
+                System.Console.WriteLine($"A={areaCir}");
             }
 
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mateu\\Documents\\Exercicios C#\\CalculoArea\\CalculoArea.csproj": {}
+    "C:\\Users\\mateu\\Documents\\Exercicios\\CalculoArea\\CalculoArea.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mateu\\Documents\\Exercicios C#\\CalculoArea\\CalculoArea.csproj": {
+    "C:\\Users\\mateu\\Documents\\Exercicios\\CalculoArea\\CalculoArea.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateu\\Documents\\Exercicios C#\\CalculoArea\\CalculoArea.csproj",
+        "projectUniqueName": "C:\\Users\\mateu\\Documents\\Exercicios\\CalculoArea\\CalculoArea.csproj",
         "projectName": "CalculoArea",
-        "projectPath": "C:\\Users\\mateu\\Documents\\Exercicios C#\\CalculoArea\\CalculoArea.csproj",
+        "projectPath": "C:\\Users\\mateu\\Documents\\Exercicios\\CalculoArea\\CalculoArea.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateu\\Documents\\Exercicios C#\\CalculoArea\\obj\\",
+        "outputPath": "C:\\Users\\mateu\\Documents\\Exercicios\\CalculoArea\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
